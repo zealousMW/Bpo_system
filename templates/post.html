@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Task</title>
+</head>
+<body>
+    <h1>Post Task</h1>
+    <form method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br>
+        <label for="client_username">Client Username:</label><br>
+        <input type="text" id="client_username" name="client_username" value={{username}}><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
