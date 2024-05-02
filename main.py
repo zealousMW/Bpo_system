@@ -112,6 +112,29 @@ def post_task():
 
     return render_template('post.html', username = current_user.username)
 
+
+@app.route('/apply' , methods=['GET','POST'])
+def apply():
+    if request.method == 'POST':
+        task_id = request.form.get('task_id')
+        task = Task.query.get(task_id)
+        task.employee_username = current_user.username
+        db.session.commit()
+
+        return redirect(url_for('home'))  # Redirect to home page after applying
+
+    return redirect(url_for('applypage')) 
+
+
+@app.route('/applypage')
+@login_required
+def applypage():
+    emp = employee.query.filter_by(Username=current_user.username).first()
+    task = Task.query.all()
+    return render_template('apply.html',tasks = task)
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 

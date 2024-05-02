@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tasks</title>
+    <!-- Add any CSS styles here -->
+    <style>
+        .task-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .task-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .task-description {
+            margin-bottom: 10px;
+        }
+        .apply-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Tasks</h1>
+    <div class="task-container">
+        <!-- Loop through tasks and display them as cards -->
+        {% for task in tasks %}
+        <div class="task-card">
+            <p class="task-title">{{ task.title }}</p>
+            <p class="task-description">{{ task.description }}</p>
+            <!-- Add Apply button with task ID as value -->
+            <form action="/apply" method="POST">
+                <input type="hidden" name="task_id" value="{{ task.id }}">
+                <button type="submit" class="apply-button">Apply</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+     
+        <li>{{ph.Username}}</li>
+        <li>{{ph.email}}</li>
+        <li>{{ph.phone}}</li>
+
+        
+    </ul>
+    <ul>
+     {% for tk in tasks %}
+        <li>{{tk.id}}</li>
+        <li>{{tk.description}}</li>
+        <li>{{tk.status}}</li>
+        <li>{{tk.client_username}}</li>
+        <li>{{tk.title}}</li>
+        <li>{{tk.employee_username}}</li>
+    {% endfor %}
+        
+    </ul>
+</body>
+</html>
