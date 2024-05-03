@@ -31,19 +31,24 @@
 </head>
 <body>
     <h1>All Tasks</h1>
-    <div class="task-container">
-        <!-- Loop through tasks and display them as cards -->
-        {% for task in tasks %}
-        <div class="task-card">
-            <p class="task-title">{{ task.title }}</p>
-            <p class="task-description">{{ task.description }}</p>
-            <!-- Add Apply button with task ID as value -->
-            <form action="/apply" method="POST">
-                <input type="hidden" name="task_id" value="{{ task.id }}">
-                <button type="submit" class="apply-button">Apply</button>
-            </form>
+    <div class="container1">
+        <h1>Task Cards</h1>
+        <div class="task-cards">
+          {% for task in tasks %}
+          <div class="task-card">
+            <div class="task-details">
+              <h2>{{ task.title }}</h2>
+              <p>{{ task.description }}</p>
+              <p>Status: {{ task.status }}</p>
+              <p>Client: {{ task.client_username }}</p>
+              {% if task.employee_username %}
+              <p>Employee: {{ task.employee_username }}</p>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-    </div>
+      </div>
+    
 </body>
 </html>

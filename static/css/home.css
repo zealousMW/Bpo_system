@@ -156,3 +156,66 @@
       display: none;
     }
   }
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+  }
+  
+  .container1 {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .task-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .task-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+  }
+  
+  .task-header h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .task-details {
+    padding: 20px;
+  }
+  
+  .task-details p {
+    margin: 10px 0;
+  }
+  
+  .task-details p strong {
+    font-weight: bold;
+  }
+  .apply-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .apply-button:hover {
+    background-color: #218838;
+  }
+  

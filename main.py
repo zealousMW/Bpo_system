@@ -49,7 +49,7 @@ def home():
     
     emp = employee.query.filter_by(Username=current_user.username).first()
     task = Task.query.all()
-    return render_template('home.html', ph = emp, tasks = task)
+    return render_template('home.html', ph = emp, tasks = task, user = current_user.username)
 
 
 
